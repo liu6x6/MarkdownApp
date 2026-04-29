@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0305769944FB57727BF14EED /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 02BA00861FCBA6D76D374396 /* github.css */; };
+		05A440523580FE8635EA539D /* BookmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6635BE8A2BEEDA7BE7870A /* BookmarkManager.swift */; };
+		145D8B818EA498F2C1D50DBF /* classic.css in Resources */ = {isa = PBXBuildFile; fileRef = 1F22FE141B40C1E5DE3614DF /* classic.css */; };
+		176E12E6F6D1AED5898BE744 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0E1EBFBE9A178B284C886 /* ContentView.swift */; };
+		198C671902A34C51E6FDEC35 /* marked.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 7CC331D8DDE68AD216CC00C5 /* marked.min.js */; };
+		3A42A6315D07358CDF328239 /* BookmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6635BE8A2BEEDA7BE7870A /* BookmarkManager.swift */; };
+		3DDCFBE52FA23D410032C6B9 /* JSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDCFBE42FA23D2D0032C6B9 /* JSHelper.swift */; };
+		3DDCFBE62FA23D410032C6B9 /* JSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDCFBE42FA23D2D0032C6B9 /* JSHelper.swift */; };
+		45AE80B2B141A60224272588 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EAC7EFD4E3CC900F67B25 /* WebView.swift */; };
+		47108335F5BBBC05C691535D /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = BBA06D683F43238F1CAAF66B /* highlight.min.js */; };
+		474C6C7E5CF030DCCB976BA3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EAC7EFD4E3CC900F67B25 /* WebView.swift */; };
+		4A5348BDD0E1E5D35DAE1FC9 /* RF_Get_Tx_Power_Report_Guide.md in Resources */ = {isa = PBXBuildFile; fileRef = 156AA8FCE870B15BA68F1CED /* RF_Get_Tx_Power_Report_Guide.md */; };
+		5599C6F79AACA42BFFCEA009 /* classic.css in Resources */ = {isa = PBXBuildFile; fileRef = 1F22FE141B40C1E5DE3614DF /* classic.css */; };
+		57F186CED8EC404ED1609360 /* mermaid.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 6C76D9D5101A323A315AE07D /* mermaid.min.js */; };
+		5808A48FA575005205FE4762 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3537B9DBB816B5FA91AA5E /* Cocoa.framework */; };
+		58266143049F6B78190200AF /* RN与SwiftUI核心概念对比.md in Resources */ = {isa = PBXBuildFile; fileRef = 6109EF0CDDD34F9A62D2F192 /* RN与SwiftUI核心概念对比.md */; };
+		5A071677967EF0532B8FD950 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5D9B6290771A3082EF9451 /* ImagePreviewView.swift */; };
+		5AC30EAC8DB7E6E74ECC866E /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5D9B6290771A3082EF9451 /* ImagePreviewView.swift */; };
+		677570DE2F9B7BAA0086CB61 /* github-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 677570DA2F9B7BAA0086CB61 /* github-dark.min.css */; };
+		677570DF2F9B7BAA0086CB61 /* notion.css in Resources */ = {isa = PBXBuildFile; fileRef = 677570DB2F9B7BAA0086CB61 /* notion.css */; };
+		677570E02F9B7BAA0086CB61 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 677570DC2F9B7BAA0086CB61 /* style.css */; };
+		677570E12F9B7BAA0086CB61 /* github-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 677570DA2F9B7BAA0086CB61 /* github-dark.min.css */; };
+		677570E22F9B7BAA0086CB61 /* notion.css in Resources */ = {isa = PBXBuildFile; fileRef = 677570DB2F9B7BAA0086CB61 /* notion.css */; };
+		677570E32F9B7BAA0086CB61 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 677570DC2F9B7BAA0086CB61 /* style.css */; };
+		677834032F9B63750097DA5D /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 677834022F9B63750097DA5D /* Markdown */; };
+		677834052F9B63750097DA5D /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = 677834042F9B63750097DA5D /* Highlightr */; };
+		677834072F9B65510097DA5D /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 677834062F9B65510097DA5D /* Markdown */; };
+		677834092F9B65510097DA5D /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = 677834082F9B65510097DA5D /* Highlightr */; };
+		6E73B907BD17428E5A2B588F /* RF_Get_Tx_Power_Report_Guide.md in Resources */ = {isa = PBXBuildFile; fileRef = 156AA8FCE870B15BA68F1CED /* RF_Get_Tx_Power_Report_Guide.md */; };
+		704CADA5E83B68D48CE81508 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48F72CF3E00DA2B34C0F8A2 /* Foundation.framework */; };
+		7417E092B5EB6622F072EADB /* github-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A2CAE4CEA556C90C31F40878 /* github-light.min.css */; };
+		757DDA862EDB35E4F7A1CDA5 /* modern.css in Resources */ = {isa = PBXBuildFile; fileRef = 2949578E68980D6491F03836 /* modern.css */; };
+		767758B1EB871D146F15A0AC /* FileBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D7E5510F61288ED3680BE2 /* FileBrowserView.swift */; };
+		7EAD6254A770FB82F1F90553 /* MarkdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059135ED368781333902C719 /* MarkdownApp.swift */; };
+		89E5CD02632D169439C99CE2 /* RN与SwiftUI核心概念对比.md in Resources */ = {isa = PBXBuildFile; fileRef = 6109EF0CDDD34F9A62D2F192 /* RN与SwiftUI核心概念对比.md */; };
+		8A5EE1D491075FB6F5D7A7D6 /* FileBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D7E5510F61288ED3680BE2 /* FileBrowserView.swift */; };
+		8ACEC667CAF28F4D5A71ACD0 /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = BBA06D683F43238F1CAAF66B /* highlight.min.js */; };
+		8B1DA55BF8EA1C3149BEB71D /* resources_arsc_解析.md in Resources */ = {isa = PBXBuildFile; fileRef = 1941FC3AA7A69296EA2AE2CC /* resources_arsc_解析.md */; };
+		8D46DDFB58F02A3C1C07044A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439B0B785056CED8B95E4F6 /* SettingsView.swift */; };
+		8EE1E594F249EFC7B763308A /* PlatformTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22027DF47F0B5DA7B508F33 /* PlatformTypes.swift */; };
+		94E90032C586AF194FBA2735 /* MarkdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059135ED368781333902C719 /* MarkdownApp.swift */; };
+		982E2E668610E9D3E1348F8D /* AppViewModel+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E726C5C86E943D7EB082B624 /* AppViewModel+Sample.swift */; };
+		986100C5DC8602924A8783A4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439B0B785056CED8B95E4F6 /* SettingsView.swift */; };
+		98AD7DCAA012DA5A038B4491 /* github-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A2CAE4CEA556C90C31F40878 /* github-light.min.css */; };
+		994BEDD57ED83AF1FAD9342D /* modern.css in Resources */ = {isa = PBXBuildFile; fileRef = 2949578E68980D6491F03836 /* modern.css */; };
+		9995EF26EEBC7F14CF1495DD /* SyntaxHighlightedTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491F856E5238F475A337E603 /* SyntaxHighlightedTextEditor.swift */; };
+		9BBF4194CFB75F53D6EF5172 /* resources_arsc_解析.md in Resources */ = {isa = PBXBuildFile; fileRef = 1941FC3AA7A69296EA2AE2CC /* resources_arsc_解析.md */; };
+		9F1D0F017CD74648C4C55B9F /* dracula.css in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E3866516BA7FF92188A71 /* dracula.css */; };
+		AF5F794391D96FD57D78FECD /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5806E5EC68BECE70181EB /* EditorView.swift */; };
+		B2C6455A35139FCB2B8610C9 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5806E5EC68BECE70181EB /* EditorView.swift */; };
+		C08A344B912CC3BF65C534A2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D95DED2073440D106BDBE0 /* AppViewModel.swift */; };
+		C119FDC8CF482D01CC9CE95F /* PlatformTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22027DF47F0B5DA7B508F33 /* PlatformTypes.swift */; };
+		C39287910EFC7E4C067FA40D /* marked.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 7CC331D8DDE68AD216CC00C5 /* marked.min.js */; };
+		CE025E8B2C330768044FFD36 /* mermaid.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 6C76D9D5101A323A315AE07D /* mermaid.min.js */; };
+		DEAD2184D02C3D47A623DF7A /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D95DED2073440D106BDBE0 /* AppViewModel.swift */; };
+		DF93EFFF472F44587E8C6B1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0E1EBFBE9A178B284C886 /* ContentView.swift */; };
+		EA5D38F0E332C0B65ABB0B22 /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 02BA00861FCBA6D76D374396 /* github.css */; };
+		F01C48C933E6CE0B8A05F69E /* SyntaxHighlightedTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491F856E5238F475A337E603 /* SyntaxHighlightedTextEditor.swift */; };
+		F8E03E945ACC8F05AB10A267 /* AppViewModel+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E726C5C86E943D7EB082B624 /* AppViewModel+Sample.swift */; };
+		FC7D441BCBCEA79F0E8100EA /* dracula.css in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E3866516BA7FF92188A71 /* dracula.css */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02BA00861FCBA6D76D374396 /* github.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = github.css; path = ../MarkdownApp/github.css; sourceTree = "<group>"; };
+		0439B0B785056CED8B95E4F6 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = MarkdownApp/SettingsView.swift; sourceTree = "<group>"; };
+		059135ED368781333902C719 /* MarkdownApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownApp.swift; path = MarkdownApp/MarkdownApp.swift; sourceTree = "<group>"; };
+		156AA8FCE870B15BA68F1CED /* RF_Get_Tx_Power_Report_Guide.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = RF_Get_Tx_Power_Report_Guide.md; path = ../MarkdownApp/RF_Get_Tx_Power_Report_Guide.md; sourceTree = "<group>"; };
+		1941FC3AA7A69296EA2AE2CC /* resources_arsc_解析.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = "resources_arsc_解析.md"; path = "../MarkdownApp/resources_arsc_解析.md"; sourceTree = "<group>"; };
+		1D6E3866516BA7FF92188A71 /* dracula.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = dracula.css; path = ../MarkdownApp/dracula.css; sourceTree = "<group>"; };
+		1F22FE141B40C1E5DE3614DF /* classic.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = classic.css; path = ../MarkdownApp/classic.css; sourceTree = "<group>"; };
+		20D7E5510F61288ED3680BE2 /* FileBrowserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileBrowserView.swift; path = MarkdownApp/FileBrowserView.swift; sourceTree = "<group>"; };
+		2949578E68980D6491F03836 /* modern.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = modern.css; path = ../MarkdownApp/modern.css; sourceTree = "<group>"; };
+		3B63EEDB564238199F402CE4 /* MarkdownApp_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkdownApp_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CD5806E5EC68BECE70181EB /* EditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EditorView.swift; path = MarkdownApp/EditorView.swift; sourceTree = "<group>"; };
+		3DDCFBE42FA23D2D0032C6B9 /* JSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSHelper.swift; sourceTree = "<group>"; };
+		3E3537B9DBB816B5FA91AA5E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		491F856E5238F475A337E603 /* SyntaxHighlightedTextEditor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyntaxHighlightedTextEditor.swift; path = MarkdownApp/SyntaxHighlightedTextEditor.swift; sourceTree = "<group>"; };
+		6109EF0CDDD34F9A62D2F192 /* RN与SwiftUI核心概念对比.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = "RN与SwiftUI核心概念对比.md"; path = "../MarkdownApp/RN与SwiftUI核心概念对比.md"; sourceTree = "<group>"; };
+		677570DA2F9B7BAA0086CB61 /* github-dark.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "github-dark.min.css"; sourceTree = "<group>"; };
+		677570DB2F9B7BAA0086CB61 /* notion.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = notion.css; sourceTree = "<group>"; };
+		677570DC2F9B7BAA0086CB61 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		6C76D9D5101A323A315AE07D /* mermaid.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mermaid.min.js; path = MarkdownApp/mermaid.min.js; sourceTree = "<group>"; };
+		7CC331D8DDE68AD216CC00C5 /* marked.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = marked.min.js; path = MarkdownApp/marked.min.js; sourceTree = "<group>"; };
+		8C6635BE8A2BEEDA7BE7870A /* BookmarkManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BookmarkManager.swift; path = MarkdownApp/BookmarkManager.swift; sourceTree = "<group>"; };
+		9A5D9B6290771A3082EF9451 /* ImagePreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePreviewView.swift; path = MarkdownApp/ImagePreviewView.swift; sourceTree = "<group>"; };
+		A2CAE4CEA556C90C31F40878 /* github-light.min.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = "github-light.min.css"; path = "../MarkdownApp/github-light.min.css"; sourceTree = "<group>"; };
+		BBA06D683F43238F1CAAF66B /* highlight.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = highlight.min.js; path = MarkdownApp/highlight.min.js; sourceTree = "<group>"; };
+		CC3EAC7EFD4E3CC900F67B25 /* WebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebView.swift; path = MarkdownApp/WebView.swift; sourceTree = "<group>"; };
+		D48F72CF3E00DA2B34C0F8A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E726C5C86E943D7EB082B624 /* AppViewModel+Sample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AppViewModel+Sample.swift"; path = "MarkdownApp/AppViewModel+Sample.swift"; sourceTree = "<group>"; };
+		F22027DF47F0B5DA7B508F33 /* PlatformTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlatformTypes.swift; path = MarkdownApp/Shared/PlatformTypes.swift; sourceTree = "<group>"; };
+		F5C52BB1BE686C21D2057FE0 /* MarkdownApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkdownApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6B0E1EBFBE9A178B284C886 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = MarkdownApp/ContentView.swift; sourceTree = "<group>"; };
+		F6D95DED2073440D106BDBE0 /* AppViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppViewModel.swift; path = MarkdownApp/AppViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C2AEA8F6657DB850D320684 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5808A48FA575005205FE4762 /* Cocoa.framework in Frameworks */,
+				677834092F9B65510097DA5D /* Highlightr in Frameworks */,
+				677834072F9B65510097DA5D /* Markdown in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4ED548172766005AECC7289 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704CADA5E83B68D48CE81508 /* Foundation.framework in Frameworks */,
+				677834052F9B63750097DA5D /* Highlightr in Frameworks */,
+				677834032F9B63750097DA5D /* Markdown in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00B6020A96B9879D3E419EBD = {
+			isa = PBXGroup;
+			children = (
+				52C1232F359ECE2675CE0E54 /* MarkdownApp */,
+				2A85DA9F7C15243077414CC3 /* Frameworks */,
+				00B7F27BC96186F3C5A00A19 /* MarkdownAppTests */,
+				8EB67B93B5EC08274EE9C273 /* MarkdownAppUITests */,
+				C69A871A8283B7215A0E1D57 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00B7F27BC96186F3C5A00A19 /* MarkdownAppTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MarkdownAppTests;
+			sourceTree = "<group>";
+		};
+		23B3A2E518EFAFF8F15B9EB9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F22027DF47F0B5DA7B508F33 /* PlatformTypes.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		2A85DA9F7C15243077414CC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B3EBFF4608930E762822673 /* OS X */,
+				D765E303EDFBECF0AD90C1E5 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52C1232F359ECE2675CE0E54 /* MarkdownApp */ = {
+			isa = PBXGroup;
+			children = (
+				677570E42F9B7BAF0086CB61 /* Samples */,
+				776F987591875DE20F5BAFA0 /* js */,
+				677570DD2F9B7BAA0086CB61 /* css */,
+				0439B0B785056CED8B95E4F6 /* SettingsView.swift */,
+				9A5D9B6290771A3082EF9451 /* ImagePreviewView.swift */,
+				E726C5C86E943D7EB082B624 /* AppViewModel+Sample.swift */,
+				23B3A2E518EFAFF8F15B9EB9 /* Shared */,
+				CC3EAC7EFD4E3CC900F67B25 /* WebView.swift */,
+				3DDCFBE42FA23D2D0032C6B9 /* JSHelper.swift */,
+				F6D95DED2073440D106BDBE0 /* AppViewModel.swift */,
+				059135ED368781333902C719 /* MarkdownApp.swift */,
+				3CD5806E5EC68BECE70181EB /* EditorView.swift */,
+				20D7E5510F61288ED3680BE2 /* FileBrowserView.swift */,
+				F6B0E1EBFBE9A178B284C886 /* ContentView.swift */,
+				491F856E5238F475A337E603 /* SyntaxHighlightedTextEditor.swift */,
+				8C6635BE8A2BEEDA7BE7870A /* BookmarkManager.swift */,
+			);
+			name = MarkdownApp;
+			sourceTree = "<group>";
+		};
+		677570DD2F9B7BAA0086CB61 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				677570DA2F9B7BAA0086CB61 /* github-dark.min.css */,
+				677570DB2F9B7BAA0086CB61 /* notion.css */,
+				677570DC2F9B7BAA0086CB61 /* style.css */,
+				02BA00861FCBA6D76D374396 /* github.css */,
+				1F22FE141B40C1E5DE3614DF /* classic.css */,
+				1D6E3866516BA7FF92188A71 /* dracula.css */,
+				A2CAE4CEA556C90C31F40878 /* github-light.min.css */,
+				2949578E68980D6491F03836 /* modern.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		677570E42F9B7BAF0086CB61 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				6109EF0CDDD34F9A62D2F192 /* RN与SwiftUI核心概念对比.md */,
+				156AA8FCE870B15BA68F1CED /* RF_Get_Tx_Power_Report_Guide.md */,
+				1941FC3AA7A69296EA2AE2CC /* resources_arsc_解析.md */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		776F987591875DE20F5BAFA0 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				6C76D9D5101A323A315AE07D /* mermaid.min.js */,
+				7CC331D8DDE68AD216CC00C5 /* marked.min.js */,
+				BBA06D683F43238F1CAAF66B /* highlight.min.js */,
+			);
+			name = js;
+			sourceTree = "<group>";
+		};
+		8B3EBFF4608930E762822673 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				3E3537B9DBB816B5FA91AA5E /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		8EB67B93B5EC08274EE9C273 /* MarkdownAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MarkdownAppUITests;
+			sourceTree = "<group>";
+		};
+		C69A871A8283B7215A0E1D57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5C52BB1BE686C21D2057FE0 /* MarkdownApp.app */,
+				3B63EEDB564238199F402CE4 /* MarkdownApp_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D765E303EDFBECF0AD90C1E5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D48F72CF3E00DA2B34C0F8A2 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52943044031C9B9AB6B6E483 /* MarkdownApp_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC5514383E2808C89AEF4C43 /* Build configuration list for PBXNativeTarget "MarkdownApp_iOS" */;
+			buildPhases = (
+				789DCB4A2AD9517C18E7D598 /* Sources */,
+				B4ED548172766005AECC7289 /* Frameworks */,
+				9F28BAD75610DEBE2D0C691D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarkdownApp_iOS;
+			productName = MarkdownApp_iOS;
+			productReference = 3B63EEDB564238199F402CE4 /* MarkdownApp_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		674BA9A09A8D69DCAB3F6407 /* MarkdownApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1718293E15C1624ED7AC2EB7 /* Build configuration list for PBXNativeTarget "MarkdownApp" */;
+			buildPhases = (
+				0EBE20AFE656D89AD8F4383D /* Sources */,
+				0C2AEA8F6657DB850D320684 /* Frameworks */,
+				5F569B9F0A904B9B751422ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarkdownApp;
+			productName = MarkdownApp;
+			productReference = F5C52BB1BE686C21D2057FE0 /* MarkdownApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12CF3FA1CD88D9E469F7581C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4701C4895EC6E80B2F2F936C /* Build configuration list for PBXProject "MarkdownApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00B6020A96B9879D3E419EBD;
+			packageReferences = (
+				677834002F9B63620097DA5D /* XCRemoteSwiftPackageReference "swift-markdown" */,
+				677834012F9B636A0097DA5D /* XCRemoteSwiftPackageReference "Highlightr" */,
+			);
+			productRefGroup = C69A871A8283B7215A0E1D57 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				674BA9A09A8D69DCAB3F6407 /* MarkdownApp */,
+				52943044031C9B9AB6B6E483 /* MarkdownApp_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F569B9F0A904B9B751422ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0305769944FB57727BF14EED /* github.css in Resources */,
+				5599C6F79AACA42BFFCEA009 /* classic.css in Resources */,
+				CE025E8B2C330768044FFD36 /* mermaid.min.js in Resources */,
+				677570E12F9B7BAA0086CB61 /* github-dark.min.css in Resources */,
+				677570E22F9B7BAA0086CB61 /* notion.css in Resources */,
+				677570E32F9B7BAA0086CB61 /* style.css in Resources */,
+				6E73B907BD17428E5A2B588F /* RF_Get_Tx_Power_Report_Guide.md in Resources */,
+				8B1DA55BF8EA1C3149BEB71D /* resources_arsc_解析.md in Resources */,
+				FC7D441BCBCEA79F0E8100EA /* dracula.css in Resources */,
+				C39287910EFC7E4C067FA40D /* marked.min.js in Resources */,
+				8ACEC667CAF28F4D5A71ACD0 /* highlight.min.js in Resources */,
+				89E5CD02632D169439C99CE2 /* RN与SwiftUI核心概念对比.md in Resources */,
+				7417E092B5EB6622F072EADB /* github-light.min.css in Resources */,
+				994BEDD57ED83AF1FAD9342D /* modern.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F28BAD75610DEBE2D0C691D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA5D38F0E332C0B65ABB0B22 /* github.css in Resources */,
+				145D8B818EA498F2C1D50DBF /* classic.css in Resources */,
+				57F186CED8EC404ED1609360 /* mermaid.min.js in Resources */,
+				677570DE2F9B7BAA0086CB61 /* github-dark.min.css in Resources */,
+				677570DF2F9B7BAA0086CB61 /* notion.css in Resources */,
+				677570E02F9B7BAA0086CB61 /* style.css in Resources */,
+				4A5348BDD0E1E5D35DAE1FC9 /* RF_Get_Tx_Power_Report_Guide.md in Resources */,
+				9BBF4194CFB75F53D6EF5172 /* resources_arsc_解析.md in Resources */,
+				9F1D0F017CD74648C4C55B9F /* dracula.css in Resources */,
+				198C671902A34C51E6FDEC35 /* marked.min.js in Resources */,
+				47108335F5BBBC05C691535D /* highlight.min.js in Resources */,
+				58266143049F6B78190200AF /* RN与SwiftUI核心概念对比.md in Resources */,
+				98AD7DCAA012DA5A038B4491 /* github-light.min.css in Resources */,
+				757DDA862EDB35E4F7A1CDA5 /* modern.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0EBE20AFE656D89AD8F4383D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986100C5DC8602924A8783A4 /* SettingsView.swift in Sources */,
+				3DDCFBE62FA23D410032C6B9 /* JSHelper.swift in Sources */,
+				5A071677967EF0532B8FD950 /* ImagePreviewView.swift in Sources */,
+				F8E03E945ACC8F05AB10A267 /* AppViewModel+Sample.swift in Sources */,
+				8EE1E594F249EFC7B763308A /* PlatformTypes.swift in Sources */,
+				45AE80B2B141A60224272588 /* WebView.swift in Sources */,
+				DEAD2184D02C3D47A623DF7A /* AppViewModel.swift in Sources */,
+				94E90032C586AF194FBA2735 /* MarkdownApp.swift in Sources */,
+				AF5F794391D96FD57D78FECD /* EditorView.swift in Sources */,
+				8A5EE1D491075FB6F5D7A7D6 /* FileBrowserView.swift in Sources */,
+				176E12E6F6D1AED5898BE744 /* ContentView.swift in Sources */,
+				F01C48C933E6CE0B8A05F69E /* SyntaxHighlightedTextEditor.swift in Sources */,
+				05A440523580FE8635EA539D /* BookmarkManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		789DCB4A2AD9517C18E7D598 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D46DDFB58F02A3C1C07044A /* SettingsView.swift in Sources */,
+				3DDCFBE52FA23D410032C6B9 /* JSHelper.swift in Sources */,
+				5AC30EAC8DB7E6E74ECC866E /* ImagePreviewView.swift in Sources */,
+				982E2E668610E9D3E1348F8D /* AppViewModel+Sample.swift in Sources */,
+				C119FDC8CF482D01CC9CE95F /* PlatformTypes.swift in Sources */,
+				474C6C7E5CF030DCCB976BA3 /* WebView.swift in Sources */,
+				C08A344B912CC3BF65C534A2 /* AppViewModel.swift in Sources */,
+				7EAD6254A770FB82F1F90553 /* MarkdownApp.swift in Sources */,
+				B2C6455A35139FCB2B8610C9 /* EditorView.swift in Sources */,
+				767758B1EB871D146F15A0AC /* FileBrowserView.swift in Sources */,
+				DF93EFFF472F44587E8C6B1D /* ContentView.swift in Sources */,
+				9995EF26EEBC7F14CF1495DD /* SyntaxHighlightedTextEditor.swift in Sources */,
+				3A42A6315D07358CDF328239 /* BookmarkManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2AE2A07F82CADA28E60FCD0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIFileSharingEnabled = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MarkdownApp.ios;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		547490296D87AC7080C88A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		965FBE61FB2855E02B31283D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIFileSharingEnabled = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MarkdownApp.ios;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D9914340FC118231A5EA566 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDocumentTypes = "{\"CFBundleTypeName\"=>\"Markdown Document\", \"CFBundleTypeRole\"=>\"Editor\", \"LSHandlerRank\"=>\"Default\", \"LSItemContentTypes\"=>[\"net.daringfireball.markdown\", \"public.plain-text\"]}";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MarkdownApp;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D89E97A28552E383C6A22C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDocumentTypes = "{\"CFBundleTypeName\"=>\"Markdown Document\", \"CFBundleTypeRole\"=>\"Editor\", \"LSHandlerRank\"=>\"Default\", \"LSItemContentTypes\"=>[\"net.daringfireball.markdown\", \"public.plain-text\"]}";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MarkdownApp;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E9977A15112FBB8FE8694A7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1718293E15C1624ED7AC2EB7 /* Build configuration list for PBXNativeTarget "MarkdownApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D89E97A28552E383C6A22C79 /* Release */,
+				9D9914340FC118231A5EA566 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4701C4895EC6E80B2F2F936C /* Build configuration list for PBXProject "MarkdownApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9977A15112FBB8FE8694A7B /* Debug */,
+				547490296D87AC7080C88A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC5514383E2808C89AEF4C43 /* Build configuration list for PBXNativeTarget "MarkdownApp_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AE2A07F82CADA28E60FCD0F /* Release */,
+				965FBE61FB2855E02B31283D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		677834002F9B63620097DA5D /* XCRemoteSwiftPackageReference "swift-markdown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-markdown";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
+		677834012F9B636A0097DA5D /* XCRemoteSwiftPackageReference "Highlightr" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raspu/Highlightr";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		677834022F9B63750097DA5D /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 677834002F9B63620097DA5D /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			productName = Markdown;
+		};
+		677834042F9B63750097DA5D /* Highlightr */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 677834012F9B636A0097DA5D /* XCRemoteSwiftPackageReference "Highlightr" */;
+			productName = Highlightr;
+		};
+		677834062F9B65510097DA5D /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 677834002F9B63620097DA5D /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			productName = Markdown;
+		};
+		677834082F9B65510097DA5D /* Highlightr */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 677834012F9B636A0097DA5D /* XCRemoteSwiftPackageReference "Highlightr" */;
+			productName = Highlightr;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 12CF3FA1CD88D9E469F7581C /* Project object */;
+}

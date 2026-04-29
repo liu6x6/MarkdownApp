@@ -1,0 +1,106 @@
+:root {
+    --bg-color: #fdfdfc;
+    --text-color: #111111;
+    --link-color: #aa0000;
+    --border-color: #cccccc;
+    --code-bg: #f4f4f4;
+    --quote-color: #555555;
+    --quote-border: #aaaaaa;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #eeeeee;
+        --link-color: #ff6666;
+        --border-color: #444444;
+        --code-bg: #222222;
+        --quote-color: #999999;
+        --quote-border: #666666;
+    }
+}
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 50px 40px;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: justify;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+h1 { font-size: 2.2em; text-align: center; margin-bottom: 1em; }
+h2 { font-size: 1.8em; border-bottom: 1px solid var(--border-color); padding-bottom: 0.2em; }
+h3 { font-size: 1.4em; }
+p, ul, ol, dl, table, pre, details {
+    margin-top: 0;
+    margin-bottom: 1.2em;
+}
+a { color: var(--link-color); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--text-color); }
+img {
+    max-width: 100%;
+    display: block;
+    margin: 2em auto;
+}
+blockquote {
+    font-style: italic;
+    padding-left: 1.5em;
+    color: var(--quote-color);
+    border-left: 3px solid var(--quote-border);
+    margin: 1.5em 0;
+}
+code, pre {
+    font-family: "Menlo", "Courier New", monospace;
+    font-size: 0.85em;
+}
+code {
+    padding: 2px 4px;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+}
+pre {
+    padding: 1.2em;
+    overflow: auto;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+pre code {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2em 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    font-size: 0.9em;
+}
+table th, table td {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+}
+table th {
+    background-color: var(--code-bg);
+    text-align: center;
+}
+hr {
+    border: none;
+    text-align: center;
+    margin: 3em 0;
+}
+hr::after {
+    content: "***";
+    letter-spacing: 1em;
+    color: var(--quote-color);
+}
