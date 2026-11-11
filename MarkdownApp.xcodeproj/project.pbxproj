@@ -59,17 +59,8 @@
 				3D4FAF7C30A4AEEC008E1CB9 /* Icon.xcassets */,
 				3D4FAEEA30A4ACB1008E1CB9 /* MarkdownApp */,
 				2A85DA9F7C15243077414CC3 /* Frameworks */,
-				00B7F27BC96186F3C5A00A19 /* MarkdownAppTests */,
-				8EB67B93B5EC08274EE9C273 /* MarkdownAppUITests */,
 				C69A871A8283B7215A0E1D57 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		00B7F27BC96186F3C5A00A19 /* MarkdownAppTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = MarkdownAppTests;
 			sourceTree = "<group>";
 		};
 		2A85DA9F7C15243077414CC3 /* Frameworks */ = {
@@ -87,13 +78,6 @@
 				3E3537B9DBB816B5FA91AA5E /* Cocoa.framework */,
 			);
 			name = "OS X";
-			sourceTree = "<group>";
-		};
-		8EB67B93B5EC08274EE9C273 /* MarkdownAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = MarkdownAppUITests;
 			sourceTree = "<group>";
 		};
 		C69A871A8283B7215A0E1D57 /* Products */ = {
@@ -333,7 +317,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = MarkdownApp-Info.plist;
+				INFOPLIST_FILE = "MarkdownApp-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -352,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = MarkdownApp-Info.plist;
+				INFOPLIST_FILE = "MarkdownApp-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
