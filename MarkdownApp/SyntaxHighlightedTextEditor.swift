@@ -12,21 +12,28 @@ import AppKit
 
 final class LineNumberRulerView: NSRulerView {
     private weak var textView: NSTextView?
+    private var lineStartOffsets = [0]
 
     init(textView: NSTextView, scrollView: NSScrollView) {
         self.textView = textView
         super.init(scrollView: scrollView, orientation: .verticalRuler)
         clientView = textView
-        updateRuleThickness()
+        updateLineStarts()
     }
 
     required init(coder: NSCoder) {
         super.init(coder: coder)
     }
 
-    func updateRuleThickness() {
-        let lineCount = max(1, textView?.string.split(separator: "\n", omittingEmptySubsequences: false).count ?? 1)
-        let digitCount = String(lineCount).count
+    func updateLineStarts() {
+        guard let textView else { return }
+
+        lineStartOffsets = [0]
+        for (offset, codeUnit) in textView.string.utf16.enumerated() where codeUnit == 10 {
+            lineStartOffsets.append(offset + 1)
+        }
+
+        let digitCount = String(lineStartOffsets.count).count
         ruleThickness = max(32, CGFloat(digitCount) * 9 + 14)
         needsDisplay = true
     }
@@ -39,7 +46,6 @@ final class LineNumberRulerView: NSRulerView {
         }
 
         let glyphRange = layoutManager.glyphRange(forBoundingRect: textView.visibleRect, in: textContainer)
-        let string = textView.string as NSString
         let attributes: [NSAttributedString.Key: Any] = [
             .font: NSFont.monospacedDigitSystemFont(ofSize: 11, weight: .regular),
             .foregroundColor: NSColor.secondaryLabelColor
@@ -50,14 +56,8 @@ final class LineNumberRulerView: NSRulerView {
             var lineGlyphRange = NSRange()
             let lineRect = layoutManager.lineFragmentRect(forGlyphAt: glyphIndex, effectiveRange: &lineGlyphRange)
             let characterIndex = layoutManager.characterIndexForGlyph(at: lineGlyphRange.location)
-            let logicalLineRange = string.lineRange(for: NSRange(location: characterIndex, length: 0))
 
-            if logicalLineRange.location == characterIndex {
-                let lineNumber = string.substring(to: characterIndex).reduce(into: 1) { count, character in
-                    if character == "\n" {
-                        count += 1
-                    }
-                }
+            if let lineNumber = lineNumber(at: characterIndex) {
                 let label = String(lineNumber) as NSString
                 let size = label.size(withAttributes: attributes)
                 let y = lineRect.minY + textView.textContainerOrigin.y + (lineRect.height - size.height) / 2
@@ -69,6 +69,25 @@ final class LineNumberRulerView: NSRulerView {
 
             glyphIndex = NSMaxRange(lineGlyphRange)
         }
+    }
+
+    private func lineNumber(at characterIndex: Int) -> Int? {
+        var lowerBound = 0
+        var upperBound = lineStartOffsets.count
+
+        while lowerBound < upperBound {
+            let midpoint = lowerBound + (upperBound - lowerBound) / 2
+            if lineStartOffsets[midpoint] <= characterIndex {
+                lowerBound = midpoint + 1
+            } else {
+                upperBound = midpoint
+            }
+        }
+
+        guard lowerBound > 0, lineStartOffsets[lowerBound - 1] == characterIndex else {
+            return nil
+        }
+        return lowerBound
     }
 }
 #endif
@@ -130,8 +149,8 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         guard let textView = nsView.documentView as? NSTextView else { return }
         if textView.string != text {
             textView.string = text
+            context.coordinator.updateLineNumberGutter()
         }
-        context.coordinator.updateLineNumberGutter()
         // 检查主题是否已更改
         context.coordinator.updateThemeIfNeeded()
     }
@@ -278,7 +297,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         }
 
         func updateLineNumberGutter() {
-            lineNumberRulerView?.updateRuleThickness()
+            lineNumberRulerView?.updateLineStarts()
         }
         
         private func updateTheme() {
