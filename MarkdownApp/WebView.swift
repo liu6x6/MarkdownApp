@@ -69,16 +69,37 @@ struct WebView: PlatformViewRepresentable {
     }
 
     class Coordinator: NSObject, WKScriptMessageHandler {
+        private struct PreviewConfiguration: Equatable {
+            let theme: String
+            let fontSize: Double
+            let lineHeight: Double
+            let documentPath: String?
+            let directoryPath: String?
+        }
+
         var parent: WebView
         var webView: WKWebView?
         private var cancellables = Set<AnyCancellable>()
         private var updateTimer: Timer?
+        private var renderedMarkdown: String?
+        private var renderedConfiguration: PreviewConfiguration?
 
         init(_ parent: WebView) {
             self.parent = parent
         }
         
         func updateContent(_ markdown: String) {
+            let configuration = PreviewConfiguration(
+                theme: parent.viewModel.previewTheme,
+                fontSize: UserDefaults.standard.double(forKey: "fontSize"),
+                lineHeight: UserDefaults.standard.double(forKey: "lineHeight"),
+                documentPath: parent.viewModel.currentFilePath,
+                directoryPath: parent.viewModel.currentDirectoryURL?.path
+            )
+            guard renderedMarkdown != markdown || renderedConfiguration != configuration else { return }
+
+            renderedMarkdown = markdown
+            renderedConfiguration = configuration
             updateTimer?.invalidate()
             updateTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] _ in
                 guard let self = self else { return }

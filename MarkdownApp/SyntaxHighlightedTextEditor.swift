@@ -200,6 +200,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         private var highlightr: Highlightr?
         private var storage: CodeAttributedString?
         private var cancellables = Set<AnyCancellable>()
+        private var appliedThemeConfiguration: String?
 
         init(_ parent: SyntaxHighlightedTextEditor) {
             self.parent = parent
@@ -207,7 +208,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
 
         func setupTextView(_ textView: NSTextView) {
             highlightr = Highlightr()
-            updateTheme()
+            updateThemeIfNeeded()
 
             storage = CodeAttributedString(highlightr: highlightr!)
             storage!.language = "markdown"
@@ -293,7 +294,23 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         }
         
         func updateThemeIfNeeded() {
+            let configuration = themeConfiguration
+            guard appliedThemeConfiguration != configuration else { return }
+            appliedThemeConfiguration = configuration
             updateTheme()
+        }
+
+        private var themeConfiguration: String {
+            let defaults = UserDefaults.standard
+            return [
+                parent.viewModel.editorTheme,
+                String(defaults.double(forKey: "fontSize")),
+                String(defaults.bool(forKey: "useCustomBgColor")),
+                String(defaults.double(forKey: "customBgColorR")),
+                String(defaults.double(forKey: "customBgColorG")),
+                String(defaults.double(forKey: "customBgColorB")),
+                String(defaults.bool(forKey: "wordWrap"))
+            ].joined(separator: "|")
         }
 
         func updateLineNumberGutter() {
@@ -355,6 +372,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         private var highlightr: Highlightr?
         var storage: CodeAttributedString?
         private var cancellables = Set<AnyCancellable>()
+        private var appliedThemeConfiguration: String?
 
         init(_ parent: SyntaxHighlightedTextEditor) {
             self.parent = parent
@@ -364,7 +382,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
             self.highlightr = highlightr
             self.storage = storage
             
-            updateTheme()
+            updateThemeIfNeeded()
 
             storage.replaceCharacters(in: NSRange(location: 0, length: storage.length), with: parent.text)
             
@@ -404,7 +422,22 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         }
         
         func updateThemeIfNeeded() {
+            let configuration = themeConfiguration
+            guard appliedThemeConfiguration != configuration else { return }
+            appliedThemeConfiguration = configuration
             updateTheme()
+        }
+
+        private var themeConfiguration: String {
+            let defaults = UserDefaults.standard
+            return [
+                parent.viewModel.editorTheme,
+                String(defaults.double(forKey: "fontSize")),
+                String(defaults.bool(forKey: "useCustomBgColor")),
+                String(defaults.double(forKey: "customBgColorR")),
+                String(defaults.double(forKey: "customBgColorG")),
+                String(defaults.double(forKey: "customBgColorB"))
+            ].joined(separator: "|")
         }
         
         private func updateTheme() {
