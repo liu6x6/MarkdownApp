@@ -60,6 +60,15 @@ class AppViewModel: ObservableObject {
     var currentDirectoryURL: URL? = nil
     private var cancellables = Set<AnyCancellable>()
 
+    var wordCount: Int {
+        markdownText.split(whereSeparator: \.isWhitespace).count
+    }
+
+    var lineCount: Int {
+        guard !markdownText.isEmpty else { return 0 }
+        return markdownText.split(separator: "\n", omittingEmptySubsequences: false).count
+    }
+
     init() {
         if let url = BookmarkManager.loadUrlFromBookmark() {
                 #if os(macOS)

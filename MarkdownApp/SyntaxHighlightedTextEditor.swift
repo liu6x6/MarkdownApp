@@ -9,6 +9,68 @@ import UIKit
 
 #if canImport(AppKit)
 import AppKit
+
+final class LineNumberRulerView: NSRulerView {
+    private weak var textView: NSTextView?
+
+    init(textView: NSTextView, scrollView: NSScrollView) {
+        self.textView = textView
+        super.init(scrollView: scrollView, orientation: .verticalRuler)
+        clientView = textView
+        updateRuleThickness()
+    }
+
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    func updateRuleThickness() {
+        let lineCount = max(1, textView?.string.split(separator: "\n", omittingEmptySubsequences: false).count ?? 1)
+        let digitCount = String(lineCount).count
+        ruleThickness = max(32, CGFloat(digitCount) * 9 + 14)
+        needsDisplay = true
+    }
+
+    override func drawHashMarksAndLabels(in rect: NSRect) {
+        guard let textView,
+              let layoutManager = textView.layoutManager,
+              let textContainer = textView.textContainer else {
+            return
+        }
+
+        let glyphRange = layoutManager.glyphRange(forBoundingRect: textView.visibleRect, in: textContainer)
+        let string = textView.string as NSString
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont.monospacedDigitSystemFont(ofSize: 11, weight: .regular),
+            .foregroundColor: NSColor.secondaryLabelColor
+        ]
+        var glyphIndex = glyphRange.location
+
+        while glyphIndex < NSMaxRange(glyphRange) {
+            var lineGlyphRange = NSRange()
+            let lineRect = layoutManager.lineFragmentRect(forGlyphAt: glyphIndex, effectiveRange: &lineGlyphRange)
+            let characterIndex = layoutManager.characterIndexForGlyph(at: lineGlyphRange.location)
+            let logicalLineRange = string.lineRange(for: NSRange(location: characterIndex, length: 0))
+
+            if logicalLineRange.location == characterIndex {
+                let lineNumber = string.substring(to: characterIndex).reduce(into: 1) { count, character in
+                    if character == "\n" {
+                        count += 1
+                    }
+                }
+                let label = String(lineNumber) as NSString
+                let size = label.size(withAttributes: attributes)
+                let y = lineRect.minY + textView.textContainerOrigin.y + (lineRect.height - size.height) / 2
+                label.draw(
+                    at: NSPoint(x: ruleThickness - size.width - 7, y: y),
+                    withAttributes: attributes
+                )
+            }
+
+            glyphIndex = NSMaxRange(lineGlyphRange)
+        }
+    }
+}
 #endif
 
 struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
@@ -25,6 +87,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         let textView = NSTextView(frame: .zero)
 
         context.coordinator.scrollView = scrollView
+        scrollView.documentView = textView
         context.coordinator.setupTextView(textView)
 
         textView.autoresizingMask = [.width]
@@ -44,9 +107,13 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         
         textView.delegate = context.coordinator
 
-        scrollView.documentView = textView
         scrollView.hasVerticalScroller = true
         scrollView.autohidesScrollers = true
+        let lineNumberRulerView = LineNumberRulerView(textView: textView, scrollView: scrollView)
+        scrollView.verticalRulerView = lineNumberRulerView
+        scrollView.hasVerticalRuler = true
+        scrollView.rulersVisible = true
+        context.coordinator.lineNumberRulerView = lineNumberRulerView
         
         scrollView.contentView.postsBoundsChangedNotifications = true
         NotificationCenter.default.addObserver(context.coordinator, selector: #selector(Coordinator.boundsDidChange(_:)), name: NSView.boundsDidChangeNotification, object: scrollView.contentView)
@@ -64,6 +131,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         if textView.string != text {
             textView.string = text
         }
+        context.coordinator.updateLineNumberGutter()
         // 检查主题是否已更改
         context.coordinator.updateThemeIfNeeded()
     }
@@ -109,6 +177,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
     class Coordinator: NSObject, NSTextViewDelegate {
         var parent: SyntaxHighlightedTextEditor
         var scrollView: NSScrollView?
+        var lineNumberRulerView: LineNumberRulerView?
         private var highlightr: Highlightr?
         private var storage: CodeAttributedString?
         private var cancellables = Set<AnyCancellable>()
@@ -187,6 +256,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         }
         
         @objc func boundsDidChange(_ notification: Notification) {
+            lineNumberRulerView?.needsDisplay = true
             guard parent.viewModel.scrollSource != .preview else { return }
             guard let clipView = notification.object as? NSClipView,
                   let documentView = clipView.documentView else { return }
@@ -205,6 +275,10 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         
         func updateThemeIfNeeded() {
             updateTheme()
+        }
+
+        func updateLineNumberGutter() {
+            lineNumberRulerView?.updateRuleThickness()
         }
         
         private func updateTheme() {
@@ -252,6 +326,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         func textDidChange(_ notification: Notification) {
             guard let textView = notification.object as? NSTextView else { return }
             self.parent.text = textView.string
+            updateLineNumberGutter()
         }
     }
     #else

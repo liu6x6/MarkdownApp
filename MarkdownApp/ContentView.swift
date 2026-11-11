@@ -7,7 +7,7 @@ struct DocumentDetailView: View {
     @EnvironmentObject var viewModel: AppViewModel
     let path: String
     @State private var isEditing: Bool = false
-    
+
     var body: some View {
         VStack(spacing: 0) {
             if isEditing {
@@ -26,14 +26,14 @@ struct DocumentDetailView: View {
                     }) {
                         Image(systemName: "arrow.uturn.backward")
                     }
-                    
+
                     Button(action: {
                         viewModel.redoAction.send()
                     }) {
                         Image(systemName: "arrow.uturn.forward")
                     }
                 }
-                
+
                 Button(action: {
                     if isEditing {
                         viewModel.saveCurrentFile()
@@ -77,7 +77,7 @@ struct ContentView: View {
             .tabItem {
                 Label("文件", systemImage: "folder")
             }
-            
+
             NavigationView {
                 SettingsView()
                     .navigationTitle("设置")
@@ -127,16 +127,28 @@ struct ContentView: View {
             FileBrowserView()
                 .navigationSplitViewColumnWidth(min: 150, ideal: 250, max: 350)
         } detail: {
-            HSplitView {
-                if viewModel.isReadingMode == false {
-                    EditorView()
-                        .frame(minWidth: 400, maxWidth: .infinity, maxHeight: .infinity)
+            VStack(spacing: 0) {
+                HSplitView {
+                    if viewModel.isReadingMode == false {
+                        EditorView()
+                            .frame(minWidth: 400, maxWidth: .infinity, maxHeight: .infinity)
+                    }
+
+                    if viewModel.showPreview || viewModel.isReadingMode {
+                        WebView(markdown: viewModel.markdownText)
+                            .frame(minWidth: 200, maxWidth: .infinity, maxHeight: .infinity)
+                    }
                 }
-                
-                if viewModel.showPreview || viewModel.isReadingMode {
-                    WebView(markdown: viewModel.markdownText)
-                        .frame(minWidth: 200, maxWidth: .infinity, maxHeight: .infinity)
+
+                Divider()
+                HStack {
+                    Spacer()
+                    Text("字数 \(viewModel.wordCount)  行数 \(viewModel.lineCount)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
+                .padding(.horizontal, 12)
+                .frame(height: 24)
             }
         }
         .frame(minWidth: 800, minHeight: 600)
@@ -148,7 +160,7 @@ struct ContentView: View {
                     Label("上一个", systemImage: "chevron.left")
                 }
                 .disabled(!viewModel.canGoPrevious)
-                
+
                 Button(action: {
                     viewModel.nextFile()
                 }) {
@@ -156,57 +168,57 @@ struct ContentView: View {
                 }
                 .disabled(!viewModel.canGoNext)
             }
-            
+
             ToolbarItemGroup(placement: .primaryAction) {
                 Button(action: {
                     viewModel.createNewFile()
                 }) {
                     Label("新建文档", systemImage: "square.and.pencil")
                 }
-                
+
                 Button(action: {
                     viewModel.openDirectory()
                 }) {
                     Label("打开...", systemImage: "folder")
                 }
-                
+
                 Divider()
-                
+
                 Button(action: {
                     viewModel.undoAction.send()
                 }) {
                     Label("撤销", systemImage: "arrow.uturn.backward")
                 }
-                
+
                 Button(action: {
                     viewModel.redoAction.send()
                 }) {
                     Label("重做", systemImage: "arrow.uturn.forward")
                 }
-                
+
                 Divider()
-                
+
                 Button(action: {
                     viewModel.searchAction.send(1) // NSTextFinder.Action.showFindInterface
                 }) {
                     Label("搜索", systemImage: "magnifyingglass")
                 }
-                
+
                 Button(action: {
                     viewModel.searchAction.send(12) // NSTextFinder.Action.showReplaceInterface
                 }) {
                     Label("替换", systemImage: "arrow.2.squarepath")
                 }
-                
+
                 Divider()
-                
+
                 Button(action: {
                     viewModel.saveCurrentFile()
                 }) {
                     Label("保存", systemImage: "square.and.arrow.down")
                 }
             }
-            
+
             ToolbarItem {
                 Menu {
                     Button("导出为 HTML") {
@@ -219,7 +231,7 @@ struct ContentView: View {
                     Label("导出", systemImage: "square.and.arrow.up")
                 }
             }
-            
+
             ToolbarItem {
                 Menu {
                     Picker("编辑器主题", selection: $viewModel.editorTheme) {
@@ -231,7 +243,7 @@ struct ContentView: View {
                     Label("编辑器主题", systemImage: "macwindow.badge.plus")
                 }
             }
-            
+
             ToolbarItem {
                 Menu {
                     Picker("预览主题", selection: $viewModel.previewTheme) {
@@ -243,7 +255,7 @@ struct ContentView: View {
                     Label("预览主题", systemImage: "doc.richtext")
                 }
             }
-            
+
             ToolbarItem {
                 Button(action: {
                     withAnimation {
@@ -254,7 +266,7 @@ struct ContentView: View {
                     Label(viewModel.showPreview ? "隐藏预览" : "显示预览", systemImage: viewModel.showPreview ? "eye.slash" : "eye")
                 }
             }
-            
+
             ToolbarItem {
                 Button(action: {
                     withAnimation {
