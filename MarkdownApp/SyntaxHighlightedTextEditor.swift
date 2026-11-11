@@ -57,21 +57,19 @@ final class LineNumberRulerView: NSRulerView {
             let lineRect = layoutManager.lineFragmentRect(forGlyphAt: glyphIndex, effectiveRange: &lineGlyphRange)
             let characterIndex = layoutManager.characterIndexForGlyph(at: lineGlyphRange.location)
 
-            if let lineNumber = lineNumber(at: characterIndex) {
-                let label = String(lineNumber) as NSString
-                let size = label.size(withAttributes: attributes)
-                let y = lineRect.minY + textView.textContainerOrigin.y + (lineRect.height - size.height) / 2
-                label.draw(
-                    at: NSPoint(x: ruleThickness - size.width - 7, y: y),
-                    withAttributes: attributes
-                )
-            }
+            let label = String(lineNumber(at: characterIndex)) as NSString
+            let size = label.size(withAttributes: attributes)
+            let y = lineRect.minY + textView.textContainerOrigin.y + (lineRect.height - size.height) / 2
+            label.draw(
+                at: NSPoint(x: ruleThickness - size.width - 7, y: y),
+                withAttributes: attributes
+            )
 
             glyphIndex = NSMaxRange(lineGlyphRange)
         }
     }
 
-    private func lineNumber(at characterIndex: Int) -> Int? {
+    private func lineNumber(at characterIndex: Int) -> Int {
         var lowerBound = 0
         var upperBound = lineStartOffsets.count
 
@@ -84,10 +82,7 @@ final class LineNumberRulerView: NSRulerView {
             }
         }
 
-        guard lowerBound > 0, lineStartOffsets[lowerBound - 1] == characterIndex else {
-            return nil
-        }
-        return lowerBound
+        return max(1, lowerBound)
     }
 }
 #endif
