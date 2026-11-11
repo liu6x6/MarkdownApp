@@ -109,6 +109,7 @@ struct WebView: PlatformViewRepresentable {
                 <head>
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
+                <base href="\(self.parent.viewModel.currentFilePath.map { URL(fileURLWithPath: $0).deletingLastPathComponent().absoluteString } ?? self.parent.viewModel.currentDirectoryURL?.absoluteString ?? "")">
                 <style>
                 :root {
                     font-size: \(finalFontSize)px;
@@ -199,12 +200,17 @@ struct WebView: PlatformViewRepresentable {
                 </html>
                 """
                 
-                if let dir = self.parent.viewModel.currentDirectoryURL {
+                let documentDirectory = self.parent.viewModel.currentFilePath
+                    .map { URL(fileURLWithPath: $0).deletingLastPathComponent() }
+                    ?? self.parent.viewModel.currentDirectoryURL
+
+                if let documentDirectory {
                     // Create a temporary hidden HTML file in the same directory to trick WebKit into allowing local image access
-                    let tempFileURL = dir.appendingPathComponent(".preview-\(UUID().uuidString).html")
+                    let tempFileURL = documentDirectory.appendingPathComponent(".preview-\(UUID().uuidString).html")
+                    let readAccessURL = self.parent.viewModel.currentDirectoryURL ?? documentDirectory
                     do {
                         try html.write(to: tempFileURL, atomically: true, encoding: .utf8)
-                        webView.loadFileURL(tempFileURL, allowingReadAccessTo: dir)
+                        webView.loadFileURL(tempFileURL, allowingReadAccessTo: readAccessURL)
                         
                         // Clean up the temp file after a short delay (enough time for WebKit to read it)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -212,7 +218,7 @@ struct WebView: PlatformViewRepresentable {
                         }
                     } catch {
                         // Fallback to memory loading if we can't write
-                        webView.loadHTMLString(html, baseURL: dir)
+                        webView.loadHTMLString(html, baseURL: documentDirectory)
                     }
                 } else {
                     webView.loadHTMLString(html, baseURL: nil)

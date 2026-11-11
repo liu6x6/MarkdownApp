@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D4FAF7D30A4AEEC008E1CB9 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4FAF7C30A4AEEC008E1CB9 /* Icon.xcassets */; };
+		3D4FAF7E30A4AEEC008E1CB9 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4FAF7C30A4AEEC008E1CB9 /* Icon.xcassets */; };
 		5808A48FA575005205FE4762 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3537B9DBB816B5FA91AA5E /* Cocoa.framework */; };
 		677834032F9B63750097DA5D /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 677834022F9B63750097DA5D /* Markdown */; };
 		677834052F9B63750097DA5D /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = 677834042F9B63750097DA5D /* Highlightr */; };
@@ -17,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		3B63EEDB564238199F402CE4 /* MarkdownApp_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkdownApp_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D4FAF7C30A4AEEC008E1CB9 /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 		3E3537B9DBB816B5FA91AA5E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		D48F72CF3E00DA2B34C0F8A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F5C52BB1BE686C21D2057FE0 /* MarkdownApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkdownApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +56,7 @@
 		00B6020A96B9879D3E419EBD = {
 			isa = PBXGroup;
 			children = (
+				3D4FAF7C30A4AEEC008E1CB9 /* Icon.xcassets */,
 				3D4FAEEA30A4ACB1008E1CB9 /* MarkdownApp */,
 				2A85DA9F7C15243077414CC3 /* Frameworks */,
 				00B7F27BC96186F3C5A00A19 /* MarkdownAppTests */,
@@ -189,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4FAF7E30A4AEEC008E1CB9 /* Icon.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4FAF7D30A4AEEC008E1CB9 /* Icon.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
