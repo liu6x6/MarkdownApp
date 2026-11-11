@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title description">
+  <title id="title">MarkdownApp icon</title>
+  <desc id="description">A Markdown document with code brackets on a blue gradient background.</desc>
+  <defs>
+    <linearGradient id="background" x1="128" y1="96" x2="896" y2="928" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F8CFF"/>
+      <stop offset="1" stop-color="#2B4EDB"/>
+    </linearGradient>
+    <linearGradient id="document" x1="320" y1="196" x2="704" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#DCE8FF"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1024" height="1024" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="30" stdDeviation="26" flood-color="#10256E" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#background)"/>
+  <circle cx="184" cy="188" r="152" fill="#FFFFFF" fill-opacity=".08"/>
+  <circle cx="870" cy="838" r="210" fill="#071C8C" fill-opacity=".16"/>
+  <g filter="url(#shadow)">
+    <path d="M296 194C296 167.49 317.49 146 344 146H612L728 262V782C728 808.51 706.51 830 680 830H344C317.49 830 296 808.51 296 782V194Z" fill="url(#document)"/>
+    <path d="M612 146V238C612 251.255 622.745 262 636 262H728L612 146Z" fill="#AAC5FF"/>
+    <path d="M412 378L348 442L412 506" fill="none" stroke="#315DD7" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M612 378L676 442L612 506" fill="none" stroke="#315DD7" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M552 350L472 534" fill="none" stroke="#315DD7" stroke-width="42" stroke-linecap="round"/>
+    <path d="M378 638H646" stroke="#7C9DEA" stroke-width="36" stroke-linecap="round"/>
+    <path d="M378 714H560" stroke="#A8BDED" stroke-width="36" stroke-linecap="round"/>
+  </g>
+</svg>
