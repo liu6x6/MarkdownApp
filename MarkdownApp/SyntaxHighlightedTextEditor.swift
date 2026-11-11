@@ -147,8 +147,9 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
 
     func updateNSView(_ nsView: NSScrollView, context: Context) {
         guard let textView = nsView.documentView as? NSTextView else { return }
-        if textView.string != text {
+        if context.coordinator.appliedText != text {
             textView.string = text
+            context.coordinator.appliedText = text
             context.coordinator.updateLineNumberGutter()
         }
         // 检查主题是否已更改
@@ -181,12 +182,13 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        if uiView.text != text {
+        if context.coordinator.appliedText != text {
             if let storage = context.coordinator.storage {
                 storage.replaceCharacters(in: NSRange(location: 0, length: storage.length), with: text)
             } else {
                 uiView.text = text
             }
+            context.coordinator.appliedText = text
         }
         context.coordinator.updateThemeIfNeeded()
     }
@@ -201,6 +203,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         private var storage: CodeAttributedString?
         private var cancellables = Set<AnyCancellable>()
         private var appliedThemeConfiguration: String?
+        var appliedText: String?
 
         init(_ parent: SyntaxHighlightedTextEditor) {
             self.parent = parent
@@ -218,6 +221,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
             }
             
             storage?.replaceCharacters(in: NSRange(location: 0, length: storage?.length ?? 0), with: parent.text)
+            appliedText = parent.text
             
             subscribeToScroll()
             subscribeToSearch()
@@ -361,7 +365,9 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
 
         func textDidChange(_ notification: Notification) {
             guard let textView = notification.object as? NSTextView else { return }
-            self.parent.text = textView.string
+            let updatedText = textView.string
+            appliedText = updatedText
+            self.parent.text = updatedText
             updateLineNumberGutter()
         }
     }
@@ -373,6 +379,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         var storage: CodeAttributedString?
         private var cancellables = Set<AnyCancellable>()
         private var appliedThemeConfiguration: String?
+        var appliedText: String?
 
         init(_ parent: SyntaxHighlightedTextEditor) {
             self.parent = parent
@@ -385,6 +392,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
             updateThemeIfNeeded()
 
             storage.replaceCharacters(in: NSRange(location: 0, length: storage.length), with: parent.text)
+            appliedText = parent.text
             
             subscribeToScroll()
         }
@@ -468,6 +476,7 @@ struct SyntaxHighlightedTextEditor: PlatformViewRepresentable {
         }
 
         func textViewDidChange(_ textView: UITextView) {
+            appliedText = textView.text
             self.parent.text = textView.text
         }
     }
