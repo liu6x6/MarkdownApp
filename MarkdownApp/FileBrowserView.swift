@@ -1,6 +1,10 @@
 
 import SwiftUI
 
+#if os(macOS)
+import AppKit
+#endif
+
 struct FileBrowserView: View {
     @EnvironmentObject var viewModel: AppViewModel
     @State private var renamingPath: String? = nil
@@ -122,6 +126,10 @@ struct FileBrowserView: View {
                     viewModel.selectFile(at: path)
                 }
                 .contextMenu {
+                    Button("在 Finder 中显示") {
+                        NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: path)])
+                    }
+                    Divider()
                     Button("重命名") {
                         renamingPath = path
                         newName = URL(fileURLWithPath: path).deletingPathExtension().lastPathComponent

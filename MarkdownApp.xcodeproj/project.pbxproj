@@ -333,8 +333,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDocumentTypes = "{\"CFBundleTypeName\"=>\"Markdown Document\", \"CFBundleTypeRole\"=>\"Editor\", \"LSHandlerRank\"=>\"Default\", \"LSItemContentTypes\"=>[\"net.daringfireball.markdown\", \"public.plain-text\"]}";
+				INFOPLIST_KEY_CFBundleDocumentTypes = "{\"CFBundleTypeName\"=>\"Markdown Document\", \"CFBundleTypeRole\"=>\"Editor\", \"LSHandlerRank\"=>\"Default\", \"LSItemContentTypes\"=>[\"net.daringfireball.markdown\"]}";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UTExportedTypeDeclarations = "{\"UTTypeConformsTo\"=>[\"public.plain-text\"], \"UTTypeDescription\"=>\"Markdown Document\", \"UTTypeIdentifier\"=>\"net.daringfireball.markdown\", \"UTTypeTagSpecification\"=>{\"public.filename-extension\"=>[\"md\", \"MD\", \"markdown\"]}}";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -353,8 +354,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDocumentTypes = "{\"CFBundleTypeName\"=>\"Markdown Document\", \"CFBundleTypeRole\"=>\"Editor\", \"LSHandlerRank\"=>\"Default\", \"LSItemContentTypes\"=>[\"net.daringfireball.markdown\", \"public.plain-text\"]}";
+				INFOPLIST_KEY_CFBundleDocumentTypes = "{\"CFBundleTypeName\"=>\"Markdown Document\", \"CFBundleTypeRole\"=>\"Editor\", \"LSHandlerRank\"=>\"Default\", \"LSItemContentTypes\"=>[\"net.daringfireball.markdown\"]}";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UTExportedTypeDeclarations = "{\"UTTypeConformsTo\"=>[\"public.plain-text\"], \"UTTypeDescription\"=>\"Markdown Document\", \"UTTypeIdentifier\"=>\"net.daringfireball.markdown\", \"UTTypeTagSpecification\"=>{\"public.filename-extension\"=>[\"md\", \"MD\", \"markdown\"]}}";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
